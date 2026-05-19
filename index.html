@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zineb FANDI – IA Engineer & Data Scientist</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --navy: #0D3B6E; --accent: #2563EB; --accent2: #7C3AED; --light: #F8FAFC; --gray: #64748B; --border: #E2E8F0; --white: #FFFFFF; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--white); color: #1E293B; line-height: 1.7; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: var(--navy); text-decoration: none; }
+  .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--gray); font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); }
+  .hero { min-height: 100vh; background: linear-gradient(135deg, #0D3B6E 0%, #1E3A5F 50%, #0F2340 100%); display: flex; align-items: center; padding: 6rem 2rem 4rem; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%); border-radius: 50%; }
+  .hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(37,99,235,0.2); border: 1px solid rgba(37,99,235,0.4); color: #93C5FD; padding: 0.375rem 1rem; border-radius: 100px; font-size: 0.8rem; font-weight: 500; margin-bottom: 1.5rem; }
+  .hero-badge::before { content: '●'; color: #60A5FA; font-size: 0.6rem; }
+  .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); color: white; line-height: 1.1; margin-bottom: 0.5rem; }
+  .hero h1 span { background: linear-gradient(135deg, #60A5FA, #A78BFA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero-subtitle { font-size: 1.2rem; color: #94A3B8; margin-bottom: 1.5rem; font-weight: 300; }
+  .hero-desc { font-size: 1rem; color: #CBD5E1; max-width: 600px; margin-bottom: 2rem; line-height: 1.8; }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+  .hero-tag { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #CBD5E1; padding: 0.3rem 0.875rem; border-radius: 100px; font-size: 0.8rem; }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-p { background: var(--accent); color: white; padding: 0.75rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.2s; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; }
+  .btn-p:hover { transform: translateY(-1px); opacity: 0.9; }
+  .btn-s { background: transparent; color: white; padding: 0.75rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 500; border: 1px solid rgba(255,255,255,0.3); transition: all 0.2s; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; }
+  .btn-s:hover { background: rgba(255,255,255,0.1); }
+  .stats { background: var(--light); padding: 3rem 2rem; border-bottom: 1px solid var(--border); }
+  .stats-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; }
+  .stat { text-align: center; }
+  .stat-n { font-family: 'DM Serif Display', serif; font-size: 2.25rem; color: var(--navy); display: block; }
+  .stat-l { color: var(--gray); font-size: 0.8rem; }
+  section { padding: 5rem 2rem; }
+  .si { max-width: 900px; margin: 0 auto; }
+  .sl { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.5rem; }
+  .st { font-family: 'DM Serif Display', serif; font-size: clamp(1.75rem, 4vw, 2.5rem); color: var(--navy); margin-bottom: 1rem; }
+  .sd { color: var(--gray); max-width: 600px; margin-bottom: 3rem; }
+  .ag { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+  .at p { color: #475569; line-height: 1.8; margin-bottom: 1rem; }
+  .ahs { display: flex; flex-direction: column; gap: 1rem; }
+  .hc { background: var(--light); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; display: flex; gap: 1rem; align-items: flex-start; }
+  .hi { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+  .hc h4 { font-size: 0.9rem; font-weight: 600; color: var(--navy); margin-bottom: 0.2rem; }
+  .hc p { font-size: 0.8rem; color: var(--gray); }
+  .tl { display: flex; flex-direction: column; }
+  .ti { display: grid; grid-template-columns: 140px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--border); }
+  .ti:last-child { border-bottom: none; }
+  .td { color: var(--gray); font-size: 0.8rem; font-weight: 500; padding-top: 0.25rem; }
+  .tc h3 { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.2rem; }
+  .to { color: var(--accent); font-size: 0.875rem; font-weight: 500; margin-bottom: 0.75rem; }
+  .tb { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+  .tb li { font-size: 0.875rem; color: #475569; padding-left: 1rem; position: relative; }
+  .tb li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+  .tt { display: flex; flex-wrap: wrap; gap: 0.375rem; margin-top: 0.75rem; }
+  .tg { background: #EFF6FF; color: var(--accent); padding: 0.2rem 0.625rem; border-radius: 100px; font-size: 0.75rem; font-weight: 500; }
+  .pg { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; }
+  .pc { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; transition: all 0.2s; text-decoration: none; display: block; position: relative; overflow: hidden; color: inherit; }
+  .pc::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); opacity: 0; transition: opacity 0.2s; }
+  .pc:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+  .pc:hover::before { opacity: 1; }
+  .pi { font-size: 1.75rem; margin-bottom: 1rem; }
+  .pc h3 { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
+  .pc p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; margin-bottom: 1rem; }
+  .ps { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+  .pt { background: #F1F5F9; color: #475569; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 500; }
+  .pl { display: inline-flex; align-items: center; gap: 0.375rem; color: var(--accent); font-size: 0.8rem; font-weight: 500; margin-top: 1rem; }
+  .publ { display: flex; flex-direction: column; gap: 1.25rem; }
+  .pubc { background: var(--light); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 0 12px 12px 0; padding: 1.5rem; }
+  .pubb { display: inline-block; color: white; padding: 0.2rem 0.625rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
+  .pubc h3 { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-bottom: 0.375rem; line-height: 1.5; }
+  .pubm { font-size: 0.8rem; color: var(--gray); margin-bottom: 0.875rem; }
+  .pubr { font-weight: 600; }
+  .puba { display: inline-flex; align-items: center; gap: 0.375rem; color: var(--accent); font-size: 0.8rem; font-weight: 500; text-decoration: none; background: white; border: 1px solid var(--border); padding: 0.35rem 0.875rem; border-radius: 6px; transition: all 0.2s; }
+  .puba:hover { background: #EFF6FF; }
+  .pubc2 { font-size: 0.8rem; color: var(--gray); font-style: italic; }
+  .cg { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1rem; }
+  .cc { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; display: flex; align-items: center; gap: 1rem; transition: all 0.2s; }
+  .cc:hover { border-color: var(--accent); box-shadow: 0 4px 12px rgba(37,99,235,0.08); transform: translateY(-2px); }
+  .cci { font-size: 1.5rem; flex-shrink: 0; }
+  .cc h4 { font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 0.15rem; }
+  .cc p { font-size: 0.75rem; color: var(--gray); }
+  .cvg { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+  .cvc { border-radius: 12px; padding: 1.5rem; text-decoration: none; display: flex; flex-direction: column; gap: 0.5rem; transition: all 0.2s; }
+  .cvc:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+  .cvico { font-size: 1.75rem; }
+  .cvc h3 { font-size: 0.95rem; font-weight: 600; color: white; }
+  .cvc p { font-size: 0.78rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
+  .cvb { display: inline-flex; align-items: center; gap: 0.375rem; background: rgba(255,255,255,0.15); color: white; padding: 0.4rem 0.875rem; border-radius: 6px; font-size: 0.78rem; font-weight: 500; margin-top: 0.5rem; width: fit-content; }
+  .skg { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+  .skgr { background: var(--light); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+  .skgr h3 { font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .skt { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+  .skt span { background: white; border: 1px solid var(--border); color: #475569; padding: 0.3rem 0.625rem; border-radius: 6px; font-size: 0.775rem; }
+  #contact { background: var(--navy); }
+  #contact .sl { color: #93C5FD; }
+  #contact .st { color: white; }
+  #contact .sd { color: #94A3B8; }
+  .contg { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  .contl { display: flex; flex-direction: column; gap: 1rem; }
+  .conta { display: flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1rem 1.25rem; text-decoration: none; color: white; transition: all 0.2s; }
+  .conta:hover { background: rgba(255,255,255,0.1); }
+  .conti { width: 40px; height: 40px; border-radius: 8px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+  .clb { font-size: 0.7rem; color: #64748B; text-transform: uppercase; letter-spacing: 0.05em; display: block; }
+  .clv { font-size: 0.9rem; font-weight: 500; display: block; }
+  .contcta { text-align: center; }
+  .contcta p { color: #94A3B8; margin-bottom: 1.5rem; line-height: 1.8; }
+  footer { background: #060D16; color: #475569; text-align: center; padding: 2rem; font-size: 0.8rem; }
+  footer a { color: #475569; }
+  @media (max-width: 768px) { .ag, .contg { grid-template-columns: 1fr; } .ti { grid-template-columns: 1fr; gap: 0.5rem; } .nav-links { display: none; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Zineb FANDI</a>
+  <ul class="nav-links">
+    <li><a href="#about">Profil</a></li>
+    <li><a href="#experience">Expériences</a></li>
+    <li><a href="#projects">Projets</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Disponible · Septembre/Octobre 2026</div>
+    <h1>Zineb <span>FANDI</span></h1>
+    <p class="hero-subtitle">IA Engineer & Data Scientist · Paris</p>
+    <p class="hero-desc">Ingénieure spécialisée en Intelligence Artificielle, Machine Learning explicable (XAI), agents IA et systèmes de données temps réel. 2 Articles de conférence IEEE. Speaker Apache Flink Meetup Paris.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">Python</span><span class="hero-tag">LLaMA · LLM · Agents IA</span>
+      <span class="hero-tag">XAI · SHAP</span><span class="hero-tag">Apache Flink · Kafka</span>
+      <span class="hero-tag">TensorFlow · XGBoost</span><span class="hero-tag">Azure DP-900</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#cv" class="btn-p">Télécharger CV ↓</a>
+      <a href="#contact" class="btn-p" style="background:var(--accent2);">Me contacter →</a>
+      <a href="https://github.com/FANDIZINEB" target="_blank" class="btn-s">GitHub ↗</a>
+      <a href="https://linkedin.com/in/zineb-fandi-7b5627255" target="_blank" class="btn-s">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat"><span class="stat-n">2</spani><span class="stat-l">Articles de conférence IEEE</span></div>
+    <div class="stat"><span class="stat-n">7+</span><span class="stat-l">Projets</span></div>
+    <div class="stat"><span class="stat-n">7</span><span class="stat-l">Certifications</span></div>
+    <div class="stat"><span class="stat-n">1</span><span class="stat-l">Speaker Meetup Paris</span></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="si">
+    <p class="sl">À propos</p><h2 class="st">Profil</h2>
+    <div class="ag">
+      <div class="at">
+        <p>Ingénieure en Intelligence Artificielle, je conçois des systèmes intelligents alliant rigueur scientifique et impact métier concret. Mon expertise couvre les agents IA multi-tâches (LLM/LLaMA), les modèles ML explicables (XAI/SHAP), les pipelines de données en temps réel (Flink, Kafka) et l'automatisation IA.</p>
+        <p>Actuellement en alternance comme Ingénieure Odoo & IA chez ISORALLONGE, je pilote l'intégration de l'IA dans les systèmes d'information et l'automatisation de pipelines ETL Python.</p>
+        <p>Titulaire d'un Master en Data Science & Big Data (mention Bien, Université Hassan II) et d'un Master 2 INSTA Paris, je cherche un CDI à partir de Octobre2026.</p>
+      </div>
+      <div class="ahs">
+        <div class="hc"><div class="hi" style="background:#EFF6FF;">🎤</div><div><h4>Speaker – Apache Flink Meetup Paris</h4><p>Groupe BPCE / Ververica · Avril 2025</p></div></div>
+        <div class="hc"><div class="hi" style="background:#F5F3FF;">📄</div><div><h4>IEEE CBMS 2026 – 1ère auteure</h4><p>XAI & Vieillissement biologique · Accepté</p></div></div>
+        <div class="hc"><div class="hi" style="background:#F0FDF4;">🏅</div><div><h4>Microsoft Azure DP-900</h4><p>Certifiée 2026</p></div></div>
+        <div class="hc"><div class="hi" style="background:#FFF7ED;">🏆</div><div><h4>Finaliste Eloquentia Toulouse</h4><p>Concours d'éloquence</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" style="background:var(--light);">
+  <div class="si">
+    <p class="sl">Parcours</p><h2 class="st">Expériences</h2>
+    <div class="tl">
+      <div class="ti">
+        <div class="td">Déc. 2025 – Auj.</div>
+        <div class="tc"><h3>Ingénieure Odoo & IA – Alternance</h3><div class="to">ISORALLONGE · Pantin, Paris</div>
+          <ul class="tb"><li>Intégration de l'IA dans les systèmes d'information, automatisation de processus métiers</li><li>Migration ERP Dolibarr → Odoo 18 : pilotage technique, modélisation des données</li><li>Développement de pipelines ETL Python (scraping, nettoyage, transformation)</li></ul>
+          <div class="tt"><span class="tg">Odoo 18 (Odoo.sh)</span><span class="tg">Python</span><span class="tg">ETL</span><span class="tg">PostgreSQL</span></div>
+        </div>
+      </div>
+      <div class="ti">
+        <div class="td">Mars – Août 2025</div>
+        <div class="tc"><h3>Stage M2 – IA Explicable & Recherche</h3><div class="to">IRIT / RESTORE · Toulouse</div>
+          <ul class="tb"><li>Framework ML explicable pour la prédiction du vieillissement biologique (~98% accuracy)</li><li>Pipeline SHAP complet pour l'interprétabilité des modèles</li><li>Publication IEEE CBMS 2026 acceptée (1ère auteure)</li></ul>
+          <div class="tt"><span class="tg">XAI</span><span class="tg">SHAP</span><span class="tg">XGBoost</span><span class="tg">Random Forest</span><span class="tg">Séries temporelles</span></div>
+        </div>
+      </div>
+      <div class="ti">
+        <div class="td">Avr. 2025</div>
+        <div class="tc"><h3>Speaker – Big Data Streaming</h3><div class="to">Apache Flink Meetup Paris · BPCE / Ververica</div>
+          <ul class="tb"><li>"Du flux à la valeur : construire des systèmes Big Data en temps réel"</li><li>Architecture end-to-end : API → Kafka → Flink → Elasticsearch → Kibana</li></ul>
+          <div class="tt"><span class="tg">Apache Flink</span><span class="tg">Kafka</span><span class="tg">Elasticsearch</span><span class="tg">Kibana</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="si">
+    <p class="sl">Projets</p><h2 class="st">Réalisations</h2>
+    <p class="sd">Projets académiques et personnels illustrant mes compétences techniques.</p>
+    <div class="pg">
+      <a href="https://github.com/FANDIZINEB/myCrew" target="_blank" class="pc">
+        <div class="pi">🤖</div><h3>myCrew – Agent IA Multi-Agents</h3>
+        <p>Outil multi-agents IA basé sur LLaMA 3.1 8B. Architecture Tool → Task → Agent → Crew. Interface web graphique pour orchestrer des workflows automatisés.</p>
+        <div class="ps"><span class="pt">LLaMA 3.1 8B</span><span class="pt">Node.js</span><span class="pt">Express</span><span class="pt">LM Studio</span></div>
+        <div class="pl">Voir sur GitHub →</div>
+      </a>
+      <a href="https://github.com/FANDIZINEB/-myCourses2" target="_blank" class="pc">
+        <div class="pi">📱</div><h3>myCourses2 – App Mobile E-commerce</h3>
+        <p>Application React Native de vente de formations. Catalogue, panier, paiement, historique. 4 reducers Redux, navigation Stack + Drawer.</p>
+        <div class="ps"><span class="pt">React Native</span><span class="pt">Redux</span><span class="pt">Expo</span><span class="pt">JavaScript</span></div>
+        <div class="pl">Voir sur GitHub →</div>
+      </a>
+      <div class="pc">
+        <div class="pi">🌊</div><h3>Pipeline Big Data Streaming</h3>
+        <p>Architecture end-to-end pour le traitement de flux en temps réel. Présenté au Apache Flink Meetup Paris (BPCE / Ververica).</p>
+        <div class="ps"><span class="pt">Apache Flink</span><span class="pt">Kafka</span><span class="pt">Elasticsearch</span><span class="pt">Kibana</span></div>
+      </div>
+      <div class="pc">
+        <div class="pi">🔒</div><h3>SIEM IA – Détection d'intrusions</h3>
+        <p>Système de détection d'intrusions réseau en temps réel. Modèle ANN + pipeline ELK complet avec alertes Kibana.</p>
+        <div class="ps"><span class="pt">ANN</span><span class="pt">TensorFlow</span><span class="pt">ELK Stack</span><span class="pt">Python</span></div>
+      </div>
+      <div class="pc">
+        <div class="pi">💬</div><h3>Forum Intelligent – Flask & Redis</h3>
+        <p>Forum full-stack avec backend Redis. Streams, Sorted Sets, Pub/Sub, Sets et TTL pour chaque besoin métier.</p>
+        <div class="ps"><span class="pt">Flask</span><span class="pt">Redis</span><span class="pt">Pub/Sub</span><span class="pt">Python</span></div>
+      </div>
+      <div class="pc">
+        <div class="pi">📊</div><h3>Dashboard Power BI & CI/CD Fabric</h3>
+        <p>Dashboard analytique (DAX, RLS, KPIs) + pipeline CI/CD Microsoft Fabric avec architecture Medallion sur 3 environnements.</p>
+        <div class="ps"><span class="pt">Power BI</span><span class="pt">DAX</span><span class="pt">Microsoft Fabric</span><span class="pt">Azure</span></div>
+      </div>
+      <div class="pc">
+  <div class="pi">🍃</div>
+  <h3>API REST – Restaurants & Menus</h3>
+  <p>API complète pour gérer restaurants et menus. Architecture en couches Controller / Service / Repository, CRUD complet (GET, POST, PUT, PATCH, DELETE), relation OneToMany et HATEOAS pour une API auto-descriptive.</p>
+  <div class="ps">
+    <span class="pt">Java</span>
+    <span class="pt">Spring Boot</span>
+    <span class="pt">Spring Data JPA</span>
+    <span class="pt">H2 Database</span>
+    <span class="pt">Maven</span>
+    <span class="pt">REST</span>
+    <span class="pt">HATEOAS</span>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<section id="publications" style="background:var(--light);">
+  <div class="si">
+    <p class="sl">Recherche</p><h2 class="st">Publications IEEE</h2>
+    <div class="publ">
+      <div class="pubc">
+        <span class="pubb" style="background:var(--accent);">IEEE CBMS 2026 · Accepté · À paraître</span>
+        <h3>Explainable Machine Learning Framework for Aging Biomarkers from Behavioral Data</h3>
+        <p class="pubm"><span class="pubr" style="color:var(--accent2);">1ère auteure</span> · XAI · SHAP · Random Forest · Vieillissement biologique · Séries temporelles</p>
+        <span class="pubc2">🔗 Lien IEEE Xplore à venir dès publication</span>
+      </div>
+      <div class="pubc" style="border-left-color:var(--accent2);">
+        <span class="pubb" style="background:var(--accent2);">IEEE SITA 2025 · Publié</span>
+        <h3>Evaluating Transformer-based Models Against Traditional and Recurrent Architectures for Sentiment Analysis</h3>
+        <p class="pubm"><span class="pubr" style="color:var(--accent2);">2ème auteure</span> · NLP · DistilBERT · LSTM · HuggingFace · Transformers</p>
+        <a href="https://ieeexplore.ieee.org/document/11273660" target="_blank" class="puba">📖 Lire sur IEEE Xplore →</a>
+      </div>
+      <div class="pubc" style="border-left-color:#059669;">
+  <span class="pubb" style="background:#059669;">Poster Scientifique · 2024</span>
+  <h3>Recommendation Systems based on Sentiment Analysis</h3>
+  <p class="pubm"><span class="pubr" style="color:#059669;">1ère auteure</span> · DistilBERT · Amazon Reviews · Systèmes de recommandation</p>
+  <span class="pubc2">Journée scientifique PFA – Université Hassan II, Ben M'Sik</span>
+</div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="si">
+    <p class="sl">Certifications</p><h2 class="st">Certifications & Distinctions</h2>
+    <p class="sd">Certifications professionnelles et engagements académiques.</p>
+      <div class="cg">
+  <div class="cc"><div class="cci">☁️</div><div><h4>Microsoft Azure DP-900</h4><p>Azure Data Fundamentals · 2026</p></div></div>
+  <div class="cc"><div class="cci">🐙</div><div><h4>Git & GitHub</h4><p>365 Data Science · Nov. 2024</p></div></div>
+  <div class="cc"><div class="cci">☕</div><div><h4>Java</h4><p>OpenClassrooms</p></div></div>
+  <div class="cc"><div class="cci">🐍</div><div><h4>SQL Intermediate</h4><p>Sololearn</p></div></div>
+  <div class="cc"><div class="cci">🐍</div><div><h4>Introduction to Python</h4><p>Sololearn</p></div></div>
+  <div class="cc"><div class="cci">🟡</div><div><h4>JavaScript</h4><p>Orange Digital Center · 2023</p></div></div>
+  <div class="cc"><div class="cci">💼</div><div><h4>Construire son pitch professionnel</h4><p>LinkedIn · 2023</p></div></div>
+  <div class="cc"><div class="cci">🏆</div><div><h4>Finaliste Eloquentia</h4><p>Concours d'éloquence · Toulouse</p></div></div>
+  <div class="cc"><div class="cci">🎤</div><div><h4>Speaker Flink Meetup Paris</h4><p>BPCE / Ververica · Avril 2025</p></div></div>
+</div>
+  </div>
+</section>
+
+<section id="cv" style="background:var(--light);">
+  <div class="si">
+    <p class="sl">CV</p><h2 class="st">Télécharger mon CV</h2>
+    <p class="sd">4 versions adaptées selon le poste visé.</p>
+    <div class="cvg">
+      <a href="CV_IAEngineer_ZinebFANDI.pdf" download class="cvc" style="background:#0D3B6E;">
+        <div class="cvico">🤖</div><h3>IA Engineer</h3>
+        <p>LLM · Agents IA · XAI · MLOps · Systèmes intelligents</p>
+        <span class="cvb">↓ Télécharger</span>
+      </a>
+      <a href="DataEngineer_ZinebFANDI.pdf" download class="cvc" style="background:#1A3A2A;">
+        <div class="cvico">🌊</div><h3>Data Engineer</h3>
+        <p>Big Data · Streaming · Flink · Kafka · Power BI · Azure</p>
+        <span class="cvb">↓ Télécharger</span>
+      </a>
+      <a href="CV_DEV_ZinebFANDI.pdf" download class="cvc" style="background:#1A1A3E;">
+        <div class="cvico">💻</div><h3>Développeure Backend</h3>
+        <p>Java · Spring Boot · API REST · Vue.js · React Native</p>
+        <span class="cvb">↓ Télécharger</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="si">
+    <p class="sl">Compétences</p><h2 class="st">Stack technique</h2>
+    <div class="skg">
+<div class="skgr"><h3>🧠 IA & Machine Learning</h3><div class="skt">
+<span>LLaMA 3.1 8B</span><span>LLM</span><span>Agents IA</span>
+<span>XGBoost</span><span>Random Forest</span><span>Scikit-learn</span>
+<span>Régression Logistique</span><span>SVM</span><span>Clustering</span>
+<span>SHAP</span><span>XAI</span>
+<span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span>
+</div></div>
+      <div class="skgr"><h3>🌊 Big Data & Streaming</h3><div class="skt"><span>Apache Flink</span><span>Kafka</span><span>Elasticsearch</span><span>Kibana</span><span>Hadoop</span><span>Spark</span><span>Redis</span></div></div>
+<div class="skgr"><h3>🔤 NLP & Deep Learning</h3><div class="skt">
+<span>DistilBERT</span><span>HuggingFace</span><span>Transformers</span>
+<span>LSTM</span><span>CNN</span><span>ANN</span>
+<span>TensorFlow</span><span>Keras</span><span>PyTorch (notions)</span>
+<span>Transfer Learning</span><span>YOLOv8</span><span>VGG16</span>
+<span>OpenCV</span>
+</div></div>
+      <div class="skgr"><h3>☁️ Cloud & DevOps</h3><div class="skt"><span>Azure DP-900</span><span>Microsoft Fabric</span><span>Docker</span><span>GitHub CI/CD</span><span>Power BI</span></div></div>
+      <div class="skgr"><h3>💻 Dev & Backend</h3><div class="skt"><span>Python</span><span>Node.js</span><span>Express</span><span>Flask</span><span>Spring Boot</span><span>Java</span><span>React Native</span><span>Vue.js</span></div></div>
+      <div class="skgr"><h3>🌐 Web Sémantique & Ontologies</h3><div class="skt">
+<span>Protégé 5</span><span>OWL</span><span>RDFS</span>
+<span>SPARQL</span><span>Ontologies</span><span>Knowledge Engineering</span>
+</div></div>
+      <div class="skgr"><h3>🌐 Langues</h3><div class="skt"><span>Français (natif)</span><span>Arabe (natif)</span><span>Anglais (B1)</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="si">
+    <p class="sl">Contact</p><h2 class="st">Travaillons ensemble</h2>
+    <p class="sd">Disponible pour un CDI à partir de septembre /Octobre 2026 · Paris & remote</p>
+    <div class="contg">
+      <div class="contl">
+        <a href="mailto:zinebfandi03@gmail.com" class="conta"><div class="conti">📧</div><div><span class="clb">Email</span><span class="clv">zinebfandi03@gmail.com</span></div></a>
+        <a href="https://linkedin.com/in/zineb-fandi-7b5627255" target="_blank" class="conta"><div class="conti">💼</div><div><span class="clb">LinkedIn</span><span class="clv">linkedin.com/in/zineb-fandi</span></div></a>
+        <a href="https://github.com/FANDIZINEB" target="_blank" class="conta"><div class="conti">🐙</div><div><span class="clb">GitHub</span><span class="clv">github.com/FANDIZINEB</span></div></a>
+        <a href="tel:+33773277776" class="conta"><div class="conti">📞</div><div><span class="clb">Téléphone</span><span class="clv">+33 7 73 27 77 76</span></div></a>
+      </div>
+      <div class="contcta">
+        <p>Ingénieure IA passionnée, disponible pour des opportunités en CDI dans le domaine de l'IA, du Data Engineering ou du Big Data à Paris.</p>
+        <a href="mailto:zinebfandi03@gmail.com" class="btn-p">Envoyer un message →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><p>© 2026 Zineb FANDI · <a href="https://github.com/FANDIZINEB">GitHub</a> · <a href="https://linkedin.com/in/zineb-fandi-7b5627255">LinkedIn</a></p></footer>
+</body>
+</html>
