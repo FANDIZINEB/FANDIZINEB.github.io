@@ -15,6 +15,7 @@
   .nav-links { display: flex; gap: 1.5rem; list-style: none; }
   .nav-links a { text-decoration: none; color: var(--gray); font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
   .nav-links a:hover { color: var(--accent); }
+  
   .hero { min-height: 100vh; background: linear-gradient(135deg, #0D3B6E 0%, #1E3A5F 50%, #0F2340 100%); display: flex; align-items: center; padding: 6rem 2rem 4rem; position: relative; overflow: hidden; }
   .hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%); border-radius: 50%; }
   .hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
@@ -120,30 +121,31 @@
 <nav>
   <a href="#" class="nav-logo">Zineb FANDI</a>
   <ul class="nav-links">
-    <li><a href="#about">Profil</a></li>
-    <li><a href="#experience">Expériences</a></li>
-    <li><a href="#projects">Projets</a></li>
-    <li><a href="#publications">Publications</a></li>
-    <li><a href="#certifications">Certifications</a></li>
-    <li><a href="#cv">CV</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about" data-i18n="nav-about">Profil</a></li>
+    <li><a href="#experience" data-i18n="nav-exp">Expériences</a></li>
+    <li><a href="#projects" data-i18n="nav-proj">Projets</a></li>
+    <li><a href="#publications" data-i18n="nav-pub">Publications</a></li>
+    <li><a href="#certifications" data-i18n="nav-cert">Certifications</a></li>
+    <li><a href="#cv" data-i18n="nav-cv">CV</a></li>
+    <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
   </ul>
+  <button onclick="toggleLang()" id="lang-btn" style="background:var(--accent);color:white;border:none;padding:0.4rem 1rem;border-radius:6px;font-size:0.85rem;font-weight:600;cursor:pointer;">🇬🇧 EN</button>
 </nav>
 
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-badge">Disponible · Septembre/Octobre 2026</div>
+    <div class="hero-badge" data-i18n="hero-badge">Disponible · Septembre/Octobre 2026</div>
     <h1>Zineb <span>FANDI</span></h1>
-    <p class="hero-subtitle">IA Engineer & Data Scientist · Paris</p>
-    <p class="hero-desc">Ingénieure spécialisée en Intelligence Artificielle, Machine Learning explicable (XAI), agents IA et systèmes de données temps réel. 2 Articles de conférence IEEE. Speaker Apache Flink Meetup Paris.</p>
+    <p class="hero-subtitle" data-i18n="hero-subtitle">IA Engineer & Data Scientist · Paris</p>
+    <p class="hero-desc" data-i18n="hero-desc">Ingénieure spécialisée en Intelligence Artificielle, Machine Learning explicable (XAI), agents IA et systèmes de données temps réel. 2 Articles de conférence IEEE. Speaker Apache Flink Meetup Paris.</p>
     <div class="hero-tags">
       <span class="hero-tag">Python</span><span class="hero-tag">LLaMA · LLM · Agents IA</span>
       <span class="hero-tag">XAI · SHAP</span><span class="hero-tag">Apache Flink · Kafka</span>
       <span class="hero-tag">TensorFlow · XGBoost</span><span class="hero-tag">Azure DP-900</span>
     </div>
     <div class="hero-ctas">
-      <a href="#cv" class="btn-p">Télécharger CV ↓</a>
-      <a href="#contact" class="btn-p" style="background:var(--accent2);">Me contacter →</a>
+      <a href="#cv" class="btn-p" data-i18n="btn-cv">Télécharger CV ↓</a>
+      <a href="#contact" class="btn-p" style="background:var(--accent2);" data-i18n="btn-contact">Me contacter →</a>
       <a href="https://github.com/FANDIZINEB" target="_blank" class="btn-s">GitHub ↗</a>
       <a href="https://linkedin.com/in/zineb-fandi-7b5627255" target="_blank" class="btn-s">LinkedIn ↗</a>
     </div>
@@ -152,21 +154,21 @@
 
 <div class="stats">
   <div class="stats-inner">
-    <div class="stat"><span class="stat-n">2</spani><span class="stat-l">Articles de conférence IEEE</span></div>
-    <div class="stat"><span class="stat-n">7+</span><span class="stat-l">Projets</span></div>
-    <div class="stat"><span class="stat-n">7</span><span class="stat-l">Certifications</span></div>
-    <div class="stat"><span class="stat-n">1</span><span class="stat-l">Speaker Meetup Paris</span></div>
+    <div class="stat"><span class="stat-n">2</span><span class="stat-l" data-i18n="stat-pub">Articles de conférence IEEE</span></div>
+    <div class="stat"><span class="stat-n">7+</span><span class="stat-l" data-i18n="stat-proj">Projets</span></div>
+    <div class="stat"><span class="stat-n">7</span><span class="stat-l" data-i18n="stat-cert">Certifications</span></div>
+    <div class="stat"><span class="stat-n">1</span><span class="stat-l" data-i18n="stat-sp">Speaker Meetup Paris</span></div>
   </div>
 </div>
 
 <section id="about">
   <div class="si">
-    <p class="sl">À propos</p><h2 class="st">Profil</h2>
+    <p class="sl" data-i18n="sl-about">À propos</p><h2 class="st" data-i18n="st-about">Profil</h2>
     <div class="ag">
       <div class="at">
-        <p>Ingénieure en Intelligence Artificielle, je conçois des systèmes intelligents alliant rigueur scientifique et impact métier concret. Mon expertise couvre les agents IA multi-tâches (LLM/LLaMA), les modèles ML explicables (XAI/SHAP), les pipelines de données en temps réel (Flink, Kafka) et l'automatisation IA.</p>
-        <p>Actuellement en alternance comme Ingénieure Odoo & IA chez ISORALLONGE, je pilote l'intégration de l'IA dans les systèmes d'information et l'automatisation de pipelines ETL Python.</p>
-        <p>Titulaire d'un Master en Data Science & Big Data (mention Bien, Université Hassan II) et d'un Master 2 INSTA Paris, je cherche un CDI à partir de Octobre2026.</p>
+        <p data-i18n="about-p1">Ingénieure en Intelligence Artificielle, je conçois des systèmes intelligents alliant rigueur scientifique et impact métier concret. Mon expertise couvre les agents IA multi-tâches (LLM/LLaMA), les modèles ML explicables (XAI/SHAP), les pipelines de données en temps réel (Flink, Kafka) et l'automatisation IA.</p>
+        <p data-i18n="about-p2">Actuellement en alternance comme Ingénieure Odoo & IA chez ISORALLONGE, je pilote l'intégration de l'IA dans les systèmes d'information et l'automatisation de pipelines ETL Python.</p>
+        <p data-i18n="about-p3">Titulaire d'un Master en Data Science & Big Data (mention Bien, Université Hassan II) et d'un Master 2 INSTA Paris, je cherche un CDI à partir de Octobre2026.</p>
       </div>
       <div class="ahs">
         <div class="hc"><div class="hi" style="background:#EFF6FF;">🎤</div><div><h4>Speaker – Apache Flink Meetup Paris</h4><p>Groupe BPCE / Ververica · Avril 2025</p></div></div>
@@ -180,204 +182,138 @@
 
 <section id="experience" style="background:var(--light);">
   <div class="si">
-    <p class="sl">Parcours</p><h2 class="st">Expériences</h2>
+    <p class="sl" data-i18n="sl-exp">Parcours</p><h2 class="st" data-i18n="st-exp">Expériences</h2>
     <div class="tl">
-      <div class="ti">
-        <div class="td">Déc. 2025 – Auj.</div>
-        <div class="tc"><h3>Ingénieure Odoo & IA – Alternance</h3><div class="to">ISORALLONGE · Pantin, Paris</div>
-          <ul class="tb"><li>Intégration de l'IA dans les systèmes d'information, automatisation de processus métiers</li><li>Migration ERP Dolibarr → Odoo 18 : pilotage technique, modélisation des données</li><li>Développement de pipelines ETL Python (scraping, nettoyage, transformation)</li></ul>
-          <div class="tt"><span class="tg">Odoo 18 (Odoo.sh)</span><span class="tg">Python</span><span class="tg">ETL</span><span class="tg">PostgreSQL</span></div>
-        </div>
-      </div>
-      <div class="ti">
-        <div class="td">Mars – Août 2025</div>
-        <div class="tc"><h3>Stage M2 – IA Explicable & Recherche</h3><div class="to">IRIT / RESTORE · Toulouse</div>
-          <ul class="tb"><li>Framework ML explicable pour la prédiction du vieillissement biologique (~98% accuracy)</li><li>Pipeline SHAP complet pour l'interprétabilité des modèles</li><li>Publication IEEE CBMS 2026 acceptée (1ère auteure)</li></ul>
-          <div class="tt"><span class="tg">XAI</span><span class="tg">SHAP</span><span class="tg">XGBoost</span><span class="tg">Random Forest</span><span class="tg">Séries temporelles</span></div>
-        </div>
-      </div>
-      <div class="ti">
-        <div class="td">Avr. 2025</div>
-        <div class="tc"><h3>Speaker – Big Data Streaming</h3><div class="to">Apache Flink Meetup Paris · BPCE / Ververica</div>
-          <ul class="tb"><li>"Du flux à la valeur : construire des systèmes Big Data en temps réel"</li><li>Architecture end-to-end : API → Kafka → Flink → Elasticsearch → Kibana</li></ul>
-          <div class="tt"><span class="tg">Apache Flink</span><span class="tg">Kafka</span><span class="tg">Elasticsearch</span><span class="tg">Kibana</span></div>
-        </div>
-      </div>
+      <div class="ti"><div class="td">Déc. 2025 – Auj.</div><div class="tc"><h3>Ingénieure Odoo & IA – Alternance</h3><div class="to">ISORALLONGE · Pantin, Paris</div><ul class="tb"><li>Intégration de l'IA dans les systèmes d'information, automatisation de processus métiers</li><li>Migration ERP Dolibarr → Odoo 18 : pilotage technique, modélisation des données</li><li>Développement de pipelines ETL Python (scraping, nettoyage, transformation)</li></ul><div class="tt"><span class="tg">Odoo 18 (Odoo.sh)</span><span class="tg">Python</span><span class="tg">ETL</span><span class="tg">PostgreSQL</span></div></div></div>
+      <div class="ti"><div class="td">Mars – Août 2025</div><div class="tc"><h3>Stage M2 – IA Explicable & Recherche</h3><div class="to">IRIT / RESTORE · Toulouse</div><ul class="tb"><li>Framework ML explicable pour la prédiction du vieillissement biologique (~98% accuracy)</li><li>Pipeline SHAP complet pour l'interprétabilité des modèles</li><li>Publication IEEE CBMS 2026 acceptée (1ère auteure)</li></ul><div class="tt"><span class="tg">XAI</span><span class="tg">SHAP</span><span class="tg">XGBoost</span><span class="tg">Random Forest</span><span class="tg">Séries temporelles</span></div></div></div>
+      <div class="ti"><div class="td">Avr. 2025</div><div class="tc"><h3>Speaker – Big Data Streaming</h3><div class="to">Apache Flink Meetup Paris · BPCE / Ververica</div><ul class="tb"><li>"Du flux à la valeur : construire des systèmes Big Data en temps réel"</li><li>Architecture end-to-end : API → Kafka → Flink → Elasticsearch → Kibana</li></ul><div class="tt"><span class="tg">Apache Flink</span><span class="tg">Kafka</span><span class="tg">Elasticsearch</span><span class="tg">Kibana</span></div></div></div>
     </div>
   </div>
 </section>
 
 <section id="projects">
   <div class="si">
-    <p class="sl">Projets</p><h2 class="st">Réalisations</h2>
-    <p class="sd">Projets académiques et personnels illustrant mes compétences techniques.</p>
+    <p class="sl" data-i18n="sl-proj">Projets</p><h2 class="st" data-i18n="st-proj">Réalisations</h2>
+    <p class="sd" data-i18n="sd-proj">Projets académiques et personnels illustrant mes compétences techniques.</p>
     <div class="pg">
-      <a href="https://github.com/FANDIZINEB/myCrew" target="_blank" class="pc">
-        <div class="pi">🤖</div><h3>myCrew – Agent IA Multi-Agents</h3>
-        <p>Outil multi-agents IA basé sur LLaMA 3.1 8B. Architecture Tool → Task → Agent → Crew. Interface web graphique pour orchestrer des workflows automatisés.</p>
-        <div class="ps"><span class="pt">LLaMA 3.1 8B</span><span class="pt">Node.js</span><span class="pt">Express</span><span class="pt">LM Studio</span></div>
-        <div class="pl">Voir sur GitHub →</div>
-      </a>
-      <a href="https://github.com/FANDIZINEB/-myCourses2" target="_blank" class="pc">
-        <div class="pi">📱</div><h3>myCourses2 – App Mobile E-commerce</h3>
-        <p>Application React Native de vente de formations. Catalogue, panier, paiement, historique. 4 reducers Redux, navigation Stack + Drawer.</p>
-        <div class="ps"><span class="pt">React Native</span><span class="pt">Redux</span><span class="pt">Expo</span><span class="pt">JavaScript</span></div>
-        <div class="pl">Voir sur GitHub →</div>
-      </a>
-      <div class="pc">
-        <div class="pi">🌊</div><h3>Pipeline Big Data Streaming</h3>
-        <p>Architecture end-to-end pour le traitement de flux en temps réel. Présenté au Apache Flink Meetup Paris (BPCE / Ververica).</p>
-        <div class="ps"><span class="pt">Apache Flink</span><span class="pt">Kafka</span><span class="pt">Elasticsearch</span><span class="pt">Kibana</span></div>
-      </div>
-      <div class="pc">
-        <div class="pi">🔒</div><h3>SIEM IA – Détection d'intrusions</h3>
-        <p>Système de détection d'intrusions réseau en temps réel. Modèle ANN + pipeline ELK complet avec alertes Kibana.</p>
-        <div class="ps"><span class="pt">ANN</span><span class="pt">TensorFlow</span><span class="pt">ELK Stack</span><span class="pt">Python</span></div>
-      </div>
-      <div class="pc">
-        <div class="pi">💬</div><h3>Forum Intelligent – Flask & Redis</h3>
-        <p>Forum full-stack avec backend Redis. Streams, Sorted Sets, Pub/Sub, Sets et TTL pour chaque besoin métier.</p>
-        <div class="ps"><span class="pt">Flask</span><span class="pt">Redis</span><span class="pt">Pub/Sub</span><span class="pt">Python</span></div>
-      </div>
-      <div class="pc">
-        <div class="pi">📊</div><h3>Dashboard Power BI & CI/CD Fabric</h3>
-        <p>Dashboard analytique (DAX, RLS, KPIs) + pipeline CI/CD Microsoft Fabric avec architecture Medallion sur 3 environnements.</p>
-        <div class="ps"><span class="pt">Power BI</span><span class="pt">DAX</span><span class="pt">Microsoft Fabric</span><span class="pt">Azure</span></div>
-      </div>
-      <div class="pc">
-  <div class="pi">🍃</div>
-  <h3>API REST – Restaurants & Menus</h3>
-  <p>API complète pour gérer restaurants et menus. Architecture en couches Controller / Service / Repository, CRUD complet (GET, POST, PUT, PATCH, DELETE), relation OneToMany et HATEOAS pour une API auto-descriptive.</p>
-  <div class="ps">
-    <span class="pt">Java</span>
-    <span class="pt">Spring Boot</span>
-    <span class="pt">Spring Data JPA</span>
-    <span class="pt">H2 Database</span>
-    <span class="pt">Maven</span>
-    <span class="pt">REST</span>
-    <span class="pt">HATEOAS</span>
-  </div>
-</div>
+      <a href="https://github.com/FANDIZINEB/myCrew" target="_blank" class="pc"><div class="pi">🤖</div><h3>myCrew – Agent IA Multi-Agents</h3><p>Outil multi-agents IA basé sur LLaMA 3.1 8B. Architecture Tool → Task → Agent → Crew. Interface web graphique pour orchestrer des workflows automatisés.</p><div class="ps"><span class="pt">LLaMA 3.1 8B</span><span class="pt">Node.js</span><span class="pt">Express</span><span class="pt">LM Studio</span></div><div class="pl">Voir sur GitHub →</div></a>
+      <a href="https://github.com/FANDIZINEB/-myCourses2" target="_blank" class="pc"><div class="pi">📱</div><h3>myCourses2 – App Mobile E-commerce</h3><p>Application React Native de vente de formations. Catalogue, panier, paiement, historique. 4 reducers Redux, navigation Stack + Drawer.</p><div class="ps"><span class="pt">React Native</span><span class="pt">Redux</span><span class="pt">Expo</span><span class="pt">JavaScript</span></div><div class="pl">Voir sur GitHub →</div></a>
+      <div class="pc"><div class="pi">🌊</div><h3>Pipeline Big Data Streaming</h3><p>Architecture end-to-end pour le traitement de flux en temps réel. Présenté au Apache Flink Meetup Paris (BPCE / Ververica).</p><div class="ps"><span class="pt">Apache Flink</span><span class="pt">Kafka</span><span class="pt">Elasticsearch</span><span class="pt">Kibana</span></div></div>
+      <div class="pc"><div class="pi">🔒</div><h3>SIEM IA – Détection d'intrusions</h3><p>Système de détection d'intrusions réseau en temps réel. Modèle ANN + pipeline ELK complet avec alertes Kibana.</p><div class="ps"><span class="pt">ANN</span><span class="pt">TensorFlow</span><span class="pt">ELK Stack</span><span class="pt">Python</span></div></div>
+      <div class="pc"><div class="pi">💬</div><h3>Forum Intelligent – Flask & Redis</h3><p>Forum full-stack avec backend Redis. Streams, Sorted Sets, Pub/Sub, Sets et TTL pour chaque besoin métier.</p><div class="ps"><span class="pt">Flask</span><span class="pt">Redis</span><span class="pt">Pub/Sub</span><span class="pt">Python</span></div></div>
+      <div class="pc"><div class="pi">📊</div><h3>Dashboard Power BI & CI/CD Fabric</h3><p>Dashboard analytique (DAX, RLS, KPIs) + pipeline CI/CD Microsoft Fabric avec architecture Medallion sur 3 environnements.</p><div class="ps"><span class="pt">Power BI</span><span class="pt">DAX</span><span class="pt">Microsoft Fabric</span><span class="pt">Azure</span></div></div>
+      <div class="pc"><div class="pi">🍃</div><h3>API REST – Restaurants & Menus</h3><p>API complète pour gérer restaurants et menus. Architecture en couches Controller / Service / Repository, CRUD complet (GET, POST, PUT, PATCH, DELETE), relation OneToMany et HATEOAS pour une API auto-descriptive.</p><div class="ps"><span class="pt">Java</span><span class="pt">Spring Boot</span><span class="pt">Spring Data JPA</span><span class="pt">H2 Database</span><span class="pt">Maven</span><span class="pt">REST</span><span class="pt">HATEOAS</span></div></div>
     </div>
   </div>
 </section>
 
 <section id="publications" style="background:var(--light);">
   <div class="si">
-    <p class="sl">Recherche</p><h2 class="st">Publications IEEE</h2>
+    <p class="sl" data-i18n="sl-pub">Recherche</p><h2 class="st" data-i18n="st-pub">Publications IEEE</h2>
     <div class="publ">
-      <div class="pubc">
-        <span class="pubb" style="background:var(--accent);">IEEE CBMS 2026 · Accepté · À paraître</span>
-        <h3>Explainable Machine Learning Framework for Aging Biomarkers from Behavioral Data</h3>
-        <p class="pubm"><span class="pubr" style="color:var(--accent2);">1ère auteure</span> · XAI · SHAP · Random Forest · Vieillissement biologique · Séries temporelles</p>
-        <span class="pubc2">🔗 Lien IEEE Xplore à venir dès publication</span>
-      </div>
-      <div class="pubc" style="border-left-color:var(--accent2);">
-        <span class="pubb" style="background:var(--accent2);">IEEE SITA 2025 · Publié</span>
-        <h3>Evaluating Transformer-based Models Against Traditional and Recurrent Architectures for Sentiment Analysis</h3>
-        <p class="pubm"><span class="pubr" style="color:var(--accent2);">2ème auteure</span> · NLP · DistilBERT · LSTM · HuggingFace · Transformers</p>
-        <a href="https://ieeexplore.ieee.org/document/11273660" target="_blank" class="puba">📖 Lire sur IEEE Xplore →</a>
-      </div>
-      <div class="pubc" style="border-left-color:#059669;">
-  <span class="pubb" style="background:#059669;">Poster Scientifique · 2024</span>
-  <h3>Recommendation Systems based on Sentiment Analysis</h3>
-  <p class="pubm"><span class="pubr" style="color:#059669;">1ère auteure</span> · DistilBERT · Amazon Reviews · Systèmes de recommandation</p>
-  <span class="pubc2">Journée scientifique PFA – Université Hassan II, Ben M'Sik</span>
-</div>
+      <div class="pubc"><span class="pubb" style="background:var(--accent);">IEEE CBMS 2026 · Accepté · À paraître</span><h3>Explainable Machine Learning Framework for Aging Biomarkers from Behavioral Data</h3><p class="pubm"><span class="pubr" style="color:var(--accent2);">1ère auteure</span> · XAI · SHAP · Random Forest · Vieillissement biologique · Séries temporelles</p><span class="pubc2">🔗 Lien IEEE Xplore à venir dès publication</span></div>
+      <div class="pubc" style="border-left-color:var(--accent2);"><span class="pubb" style="background:var(--accent2);">IEEE SITA 2025 · Publié</span><h3>Evaluating Transformer-based Models Against Traditional and Recurrent Architectures for Sentiment Analysis</h3><p class="pubm"><span class="pubr" style="color:var(--accent2);">2ème auteure</span> · NLP · DistilBERT · LSTM · HuggingFace · Transformers</p><a href="https://ieeexplore.ieee.org/document/11273660" target="_blank" class="puba">📖 Lire sur IEEE Xplore →</a></div>
+      <div class="pubc" style="border-left-color:#059669;"><span class="pubb" style="background:#059669;">Poster Scientifique · 2024</span><h3>Recommendation Systems based on Sentiment Analysis</h3><p class="pubm"><span class="pubr" style="color:#059669;">1ère auteure</span> · DistilBERT · Amazon Reviews · Systèmes de recommandation</p><span class="pubc2">Journée scientifique PFA – Université Hassan II, Ben M'Sik</span></div>
     </div>
   </div>
 </section>
 
 <section id="certifications">
   <div class="si">
-    <p class="sl">Certifications</p><h2 class="st">Certifications & Distinctions</h2>
-    <p class="sd">Certifications professionnelles et engagements académiques.</p>
-      <div class="cg">
-  <div class="cc"><div class="cci">☁️</div><div><h4>Microsoft Azure DP-900</h4><p>Azure Data Fundamentals · 2026</p></div></div>
-  <div class="cc"><div class="cci">🐙</div><div><h4>Git & GitHub</h4><p>365 Data Science · Nov. 2024</p></div></div>
-  <div class="cc"><div class="cci">☕</div><div><h4>Java</h4><p>OpenClassrooms</p></div></div>
-  <div class="cc"><div class="cci">🐍</div><div><h4>SQL Intermediate</h4><p>Sololearn</p></div></div>
-  <div class="cc"><div class="cci">🐍</div><div><h4>Introduction to Python</h4><p>Sololearn</p></div></div>
-  <div class="cc"><div class="cci">🟡</div><div><h4>JavaScript</h4><p>Orange Digital Center · 2023</p></div></div>
-  <div class="cc"><div class="cci">💼</div><div><h4>Construire son pitch professionnel</h4><p>LinkedIn · 2023</p></div></div>
-  <div class="cc"><div class="cci">🏆</div><div><h4>Finaliste Eloquentia</h4><p>Concours d'éloquence · Toulouse</p></div></div>
-  <div class="cc"><div class="cci">🎤</div><div><h4>Speaker Flink Meetup Paris</h4><p>BPCE / Ververica · Avril 2025</p></div></div>
-</div>
+    <p class="sl" data-i18n="sl-cert">Certifications</p><h2 class="st" data-i18n="st-cert">Certifications & Distinctions</h2>
+    <p class="sd" data-i18n="sd-cert">Certifications professionnelles et engagements académiques.</p>
+    <div class="cg"><div class="cc"><div class="cci">☁️</div><div><h4>Microsoft Azure DP-900</h4><p>Azure Data Fundamentals · 2026</p></div></div><div class="cc"><div class="cci">🐙</div><div><h4>Git & GitHub</h4><p>365 Data Science · Nov. 2024</p></div></div><div class="cc"><div class="cci">☕</div><div><h4>Java</h4><p>OpenClassrooms</p></div></div><div class="cc"><div class="cci">🐍</div><div><h4>SQL Intermediate</h4><p>Sololearn</p></div></div><div class="cc"><div class="cci">🐍</div><div><h4>Introduction to Python</h4><p>Sololearn</p></div></div><div class="cc"><div class="cci">🟡</div><div><h4>JavaScript</h4><p>Orange Digital Center · 2023</p></div></div><div class="cc"><div class="cci">💼</div><div><h4>Construire son pitch professionnel</h4><p>LinkedIn · 2023</p></div></div><div class="cc"><div class="cci">🏆</div><div><h4>Finaliste Eloquentia</h4><p>Concours d'éloquence · Toulouse</p></div></div><div class="cc"><div class="cci">🎤</div><div><h4>Speaker Flink Meetup Paris</h4><p>BPCE / Ververica · Avril 2025</p></div></div></div>
   </div>
 </section>
 
 <section id="cv" style="background:var(--light);">
   <div class="si">
-    <p class="sl">CV</p><h2 class="st">Télécharger mon CV</h2>
-    <p class="sd">4 versions adaptées selon le poste visé.</p>
-    <div class="cvg">
-      <a href="CV_IAEngineer_ZinebFANDI.pdf" download class="cvc" style="background:#0D3B6E;">
-        <div class="cvico">🤖</div><h3>IA Engineer</h3>
-        <p>LLM · Agents IA · XAI · MLOps · Systèmes intelligents</p>
-        <span class="cvb">↓ Télécharger</span>
-      </a>
-      <a href="DataEngineer_ZinebFANDI.pdf" download class="cvc" style="background:#1A3A2A;">
-        <div class="cvico">🌊</div><h3>Data Engineer</h3>
-        <p>Big Data · Streaming · Flink · Kafka · Power BI · Azure</p>
-        <span class="cvb">↓ Télécharger</span>
-      </a>
-      <a href="CV_DEV_ZinebFANDI.pdf" download class="cvc" style="background:#1A1A3E;">
-        <div class="cvico">💻</div><h3>Développeure Backend</h3>
-        <p>Java · Spring Boot · API REST · Vue.js · React Native</p>
-        <span class="cvb">↓ Télécharger</span>
-      </a>
-    </div>
+    <p class="sl" data-i18n="sl-cv">CV</p><h2 class="st" data-i18n="st-cv">Télécharger mon CV</h2>
+    <p class="sd" data-i18n="sd-cv">3 versions adaptées selon le poste visé.</p>
+    <div class="cvg"><a href="CV_IAEngineer_ZinebFANDI.pdf" download class="cvc" style="background:#0D3B6E;"><div class="cvico">🤖</div><h3>IA Engineer</h3><p>LLM · Agents IA · XAI · MLOps · Systèmes intelligents</p><span class="cvb">↓ Télécharger</span></a><a href="DataEngineer_ZinebFANDI.pdf" download class="cvc" style="background:#1A3A2A;"><div class="cvico">🌊</div><h3>Data Engineer</h3><p>Big Data · Streaming · Flink · Kafka · Power BI · Azure</p><span class="cvb">↓ Télécharger</span></a><a href="CV_DEV_ZinebFANDI.pdf" download class="cvc" style="background:#1A1A3E;"><div class="cvico">💻</div><h3>Développeure Backend</h3><p>Java · Spring Boot · API REST · Vue.js · React Native</p><span class="cvb">↓ Télécharger</span></a></div>
   </div>
 </section>
 
 <section id="skills">
   <div class="si">
-    <p class="sl">Compétences</p><h2 class="st">Stack technique</h2>
-    <div class="skg">
-<div class="skgr"><h3>🧠 IA & Machine Learning</h3><div class="skt">
-<span>LLaMA 3.1 8B</span><span>LLM</span><span>Agents IA</span>
-<span>XGBoost</span><span>Random Forest</span><span>Scikit-learn</span>
-<span>Régression Logistique</span><span>SVM</span><span>Clustering</span>
-<span>SHAP</span><span>XAI</span>
-<span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span>
-</div></div>
-      <div class="skgr"><h3>🌊 Big Data & Streaming</h3><div class="skt"><span>Apache Flink</span><span>Kafka</span><span>Elasticsearch</span><span>Kibana</span><span>Hadoop</span><span>Spark</span><span>Redis</span></div></div>
-<div class="skgr"><h3>🔤 NLP & Deep Learning</h3><div class="skt">
-<span>DistilBERT</span><span>HuggingFace</span><span>Transformers</span>
-<span>LSTM</span><span>CNN</span><span>ANN</span>
-<span>TensorFlow</span><span>Keras</span><span>PyTorch </span>
-<span>Transfer Learning</span><span>YOLOv8</span><span>VGG16</span>
-<span>OpenCV</span>
-</div></div>
-      <div class="skgr"><h3>☁️ Cloud & DevOps</h3><div class="skt"><span>Azure DP-900</span><span>Microsoft Fabric</span><span>Docker</span><span>GitHub CI/CD</span><span>Power BI</span></div></div>
-      <div class="skgr"><h3>💻 Dev & Backend</h3><div class="skt"><span>Python</span><span>Node.js</span><span>Express</span><span>Flask</span><span>Spring Boot</span><span>Java</span><span>React Native</span><span>Vue.js</span></div></div>
-      <div class="skgr"><h3>🌐 Web Sémantique & Ontologies</h3><div class="skt">
-<span>Protégé 5</span><span>OWL</span><span>RDFS</span>
-<span>SPARQL</span><span>Ontologies</span><span>Knowledge Engineering</span>
-</div></div>
-      <div class="skgr"><h3>🌐 Langues</h3><div class="skt"><span>Français (natif)</span><span>Arabe (natif)</span><span>Anglais (B1)</span></div></div>
-    </div>
+    <p class="sl" data-i18n="sl-skills">Compétences</p><h2 class="st" data-i18n="st-skills">Stack technique</h2>
+    <div class="skg"><div class="skgr"><h3>🧠 IA & Machine Learning</h3><div class="skt"><span>LLaMA 3.1 8B</span><span>LLM</span><span>Agents IA</span><span>XGBoost</span><span>Random Forest</span><span>Scikit-learn</span><span>Régression Logistique</span><span>SVM</span><span>Clustering</span><span>SHAP</span><span>XAI</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span></div></div><div class="skgr"><h3>🌊 Big Data & Streaming</h3><div class="skt"><span>Apache Flink</span><span>Kafka</span><span>Elasticsearch</span><span>Kibana</span><span>Hadoop</span><span>Spark</span><span>Redis</span></div></div><div class="skgr"><h3>🔤 NLP & Deep Learning</h3><div class="skt"><span>DistilBERT</span><span>HuggingFace</span><span>Transformers</span><span>LSTM</span><span>CNN</span><span>ANN</span><span>TensorFlow</span><span>Keras</span><span>PyTorch</span><span>Transfer Learning</span><span>YOLOv8</span><span>VGG16</span><span>OpenCV</span></div></div><div class="skgr"><h3>☁️ Cloud & DevOps</h3><div class="skt"><span>Azure DP-900</span><span>Microsoft Fabric</span><span>Docker</span><span>GitHub CI/CD</span><span>Power BI</span></div></div><div class="skgr"><h3>💻 Dev & Backend</h3><div class="skt"><span>Python</span><span>Node.js</span><span>Express</span><span>Flask</span><span>Spring Boot</span><span>Java</span><span>React Native</span><span>Vue.js</span></div></div><div class="skgr"><h3>🌐 Web Sémantique & Ontologies</h3><div class="skt"><span>Protégé 5</span><span>OWL</span><span>RDFS</span><span>SPARQL</span><span>Ontologies</span><span>Knowledge Engineering</span></div></div><div class="skgr"><h3>🌐 Langues</h3><div class="skt"><span>Français (natif)</span><span>Arabe (natif)</span><span>Anglais (B1)</span></div></div></div>
   </div>
 </section>
 
 <section id="contact">
   <div class="si">
-    <p class="sl">Contact</p><h2 class="st">Travaillons ensemble</h2>
-    <p class="sd">Disponible pour un CDI à partir de septembre /Octobre 2026 · France & remote</p>
-    <div class="contg">
-      <div class="contl">
-        <a href="mailto:zinebfandi03@gmail.com" class="conta"><div class="conti">📧</div><div><span class="clb">Email</span><span class="clv">zinebfandi03@gmail.com</span></div></a>
-        <a href="https://linkedin.com/in/zineb-fandi-7b5627255" target="_blank" class="conta"><div class="conti">💼</div><div><span class="clb">LinkedIn</span><span class="clv">linkedin.com/in/zineb-fandi</span></div></a>
-        <a href="https://github.com/FANDIZINEB" target="_blank" class="conta"><div class="conti">🐙</div><div><span class="clb">GitHub</span><span class="clv">github.com/FANDIZINEB</span></div></a>
-      </div>
-      <div class="contcta">
-        <p>Ingénieure IA passionnée, disponible pour des opportunités en CDI dans le domaine de l'IA, du Data Engineering ou du Big Data en France.</p>
-        <a href="mailto:zinebfandi03@gmail.com" class="btn-p">Envoyer un message →</a>
-      </div>
-    </div>
+    <p class="sl" data-i18n="sl-contact">Contact</p><h2 class="st" data-i18n="st-contact">Travaillons ensemble</h2>
+    <p class="sd" data-i18n="sd-contact">Disponible pour un CDI à partir de septembre/Octobre 2026 · France & remote</p>
+    <div class="contg"><div class="contl"><a href="mailto:zinebfandi03@gmail.com" class="conta"><div class="conti">📧</div><div><span class="clb">Email</span><span class="clv">zinebfandi03@gmail.com</span></div></a><a href="https://linkedin.com/in/zineb-fandi-7b5627255" target="_blank" class="conta"><div class="conti">💼</div><div><span class="clb">LinkedIn</span><span class="clv">linkedin.com/in/zineb-fandi</span></div></a><a href="https://github.com/FANDIZINEB" target="_blank" class="conta"><div class="conti">🐙</div><div><span class="clb">GitHub</span><span class="clv">github.com/FANDIZINEB</span></div></a></div><div class="contcta"><p data-i18n="contact-cta">Ingénieure IA passionnée, disponible pour des opportunités en CDI dans le domaine de l'IA, du Data Engineering ou du Big Data en France.</p><a href="mailto:zinebfandi03@gmail.com" class="btn-p" data-i18n="btn-send">Envoyer un message →</a></div></div>
   </div>
 </section>
 
 <footer><p>© 2026 Zineb FANDI · <a href="https://github.com/FANDIZINEB">GitHub</a> · <a href="https://linkedin.com/in/zineb-fandi-7b5627255">LinkedIn</a></p></footer>
+
+<script>
+const translations = {
+  fr: {
+    "nav-about": "Profil", "nav-exp": "Expériences", "nav-proj": "Projets",
+    "nav-pub": "Publications", "nav-cert": "Certifications", "nav-cv": "CV", "nav-contact": "Contact",
+    "hero-badge": "Disponible · Septembre/Octobre 2026",
+    "hero-subtitle": "IA Engineer & Data Scientist · Paris",
+    "hero-desc": "Ingénieure spécialisée en Intelligence Artificielle, Machine Learning explicable (XAI), agents IA et systèmes de données temps réel. 2 Articles de conférence IEEE. Speaker Apache Flink Meetup Paris.",
+    "btn-cv": "Télécharger CV ↓", "btn-contact": "Me contacter →",
+    "stat-pub": "Articles de conférence IEEE", "stat-proj": "Projets", "stat-cert": "Certifications", "stat-sp": "Speaker Meetup Paris",
+    "sl-about": "À propos", "st-about": "Profil",
+    "about-p1": "Ingénieure en Intelligence Artificielle, je conçois des systèmes intelligents alliant rigueur scientifique et impact métier concret. Mon expertise couvre les agents IA multi-tâches (LLM/LLaMA), les modèles ML explicables (XAI/SHAP), les pipelines de données en temps réel (Flink, Kafka) et l'automatisation IA.",
+    "about-p2": "Actuellement en alternance comme Ingénieure Odoo & IA chez ISORALLONGE, je pilote l'intégration de l'IA dans les systèmes d'information et l'automatisation de pipelines ETL Python.",
+    "about-p3": "Titulaire d'un Master en Data Science & Big Data (mention Bien, Université Hassan II) et d'un Master 2 INSTA Paris, je cherche un CDI à partir de Octobre2026.",
+    "sl-exp": "Parcours", "st-exp": "Expériences",
+    "sl-proj": "Projets", "st-proj": "Réalisations", "sd-proj": "Projets académiques et personnels illustrant mes compétences techniques.",
+    "sl-pub": "Recherche", "st-pub": "Publications",
+    "sl-cert": "Certifications", "st-cert": "Certifications & Distinctions", "sd-cert": "Certifications professionnelles et engagements académiques.",
+    "sl-cv": "CV", "st-cv": "Télécharger mon CV", "sd-cv": "3 versions adaptées selon le poste visé.",
+    "sl-skills": "Compétences", "st-skills": "Stack technique",
+    "sl-contact": "Contact", "st-contact": "Travaillons ensemble",
+    "sd-contact": "Disponible pour un CDI à partir de septembre/Octobre 2026 · France & remote",
+    "contact-cta": "Ingénieure IA passionnée, disponible pour des opportunités en CDI dans le domaine de l'IA, du Data Engineering ou du Big Data en France.",
+    "btn-send": "Envoyer un message →"
+  },
+  en: {
+    "nav-about": "Profile", "nav-exp": "Experience", "nav-proj": "Projects",
+    "nav-pub": "Publications", "nav-cert": "Certifications", "nav-cv": "Resume", "nav-contact": "Contact",
+    "hero-badge": "Available · September/October 2026",
+    "hero-subtitle": "AI Engineer & Data Scientist · Paris",
+    "hero-desc": "AI Engineer specialized in Explainable Machine Learning (XAI), multi-agent AI systems (LLM/LLaMA) and real-time data pipelines. 2 IEEE conference papers. Speaker at Apache Flink Meetup Paris.",
+    "btn-cv": "Download Resume ↓", "btn-contact": "Contact me →",
+    "stat-pub": "IEEE Conference Papers", "stat-proj": "Projects", "stat-cert": "Certifications", "stat-sp": "Speaker Meetup Paris",
+    "sl-about": "About", "st-about": "Profile",
+    "about-p1": "AI Engineer designing intelligent systems combining scientific rigor and concrete business impact. My expertise covers multi-task AI agents (LLM/LLaMA), explainable ML models (XAI/SHAP), real-time data pipelines (Flink, Kafka) and AI automation.",
+    "about-p2": "Currently working as Odoo & AI Engineer (apprenticeship) at ISORALLONGE, leading AI integration into information systems and automating ETL pipelines in Python.",
+    "about-p3": "Master's degree in Data Science & Big Data (with distinction, University Hassan II) and Master 2 INSTA Paris. Looking for a full-time position from October 2026.",
+    "sl-exp": "Path", "st-exp": "Work Experience",
+    "sl-proj": "Projects", "st-proj": "Projects", "sd-proj": "Academic and personal projects showcasing my technical skills.",
+    "sl-pub": "Research", "st-pub": "Publications",
+    "sl-cert": "Certifications", "st-cert": "Certifications & Achievements", "sd-cert": "Professional certifications and academic achievements.",
+    "sl-cv": "Resume", "st-cv": "Download my Resume", "sd-cv": "3 versions tailored to the targeted position.",
+    "sl-skills": "Skills", "st-skills": "Technical Stack",
+    "sl-contact": "Contact", "st-contact": "Let's work together",
+    "sd-contact": "Available for a full-time position from September/October 2026 · France & remote",
+    "contact-cta": "Passionate AI Engineer, available for full-time opportunities in AI, Data Engineering or Big Data in France.",
+    "btn-send": "Send a message →"
+  }
+};
+
+let currentLang = 'fr';
+
+function toggleLang() {
+  currentLang = currentLang === 'fr' ? 'en' : 'fr';
+  const btn = document.getElementById('lang-btn');
+  btn.textContent = currentLang === 'fr' ? '🇬🇧 EN' : '🇫🇷 FR';
+  document.documentElement.lang = currentLang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[currentLang][key]) el.textContent = translations[currentLang][key];
+  });
+}
+</script>
+
 </body>
 </html>
